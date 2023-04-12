@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama_game')->nullable();
             $table->string('deskripsi')->nullable();
             $table->string('gambar')->nullable();
+            $table->integer("naik_rank");
             $table->string('harga')->nullable();
             $table->timestamps();
         });

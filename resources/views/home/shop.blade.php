@@ -24,100 +24,39 @@
             <table cellspacing="20">
                 <tr>
 
-                    
+                    @foreach($game as $game)
                     <th>
                         <ol>
                             <center>
                                 <h2></h2>
-                                <img src="home\image\Mobile legend.jpg"  width="300" height="150" border-radius = 50%>
+                                <img src="game/{{$game->gambar}}"  width="300" height="150" border-radius = 50%>
                             </center>
-                            <h4>Mobile Legend</h4>
-                            <h5>IDR 100.000 per Rank</h5>
-                            <a href="ml.html">description</a>
-                        </ol>
-                    </th>
-                    
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\PUBG.jpg"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>PUBG</h4>
-                            <h5>IDR 100.000 per Rank</h5>
-                            <a href="pubg.html">description</a>
-                        </ol>
-                    </th> 
-                    <th>
-                        <ol><center>
-                            <h2></h2>
-                            <img src="home\image\CS GO.jpg"   width="300" height="150" border-radius = 50%>
-                        </center>
-                            <h4>CS : GO</h4>
-                            <h5>IDR 150.000 per Rank</h5>
-                            <a href="csgo.html">description</a>
-                        </ol>
-                    </th> 
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\Valorant.webp"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>Valorant</h4>
-                            <h5>IDR 25.000 per Rank</h5>
-                            <a href="valorant.html">description</a>
+                            <a href="{{url('detail_games', $game->id)}}">{{$game->nama_game}}</a>
+                            <h5>{{$game->harga}} per Rank</h5>
+                            <a href="ml.html">{{$game->deskripsi}}</a>
 
-                            
+                            <form action="{{url('tambah_pesanan', $game->id)}}" method="Post">
+
+                            @csrf
+                                <div class="row">
+
+                                    <div class="col-md-4">
+
+                                    <input type="number" name="rank" value="1" min="0" style="width: 100px">
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                    <input type="submit" value="Tambah ke Pesanan"> 
+                                    </div>
+            
+                                
+                                </div>
+                             </form>
                         </ol>
                     </th>
+                    @endforeach
                     
-                </tr>
-                <tr>
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\ApexLegends.jpg"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>Apex Legend </h4>
-                            <h5>IDR 50.000 per Rank</h5>
-                            <a href="apex.html">description</a>
-                        </ol>
-                    </th>
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\Dota2.jpg"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>Dota 2</h4>
-                            <h5>IDR 125.000 per Rank</h5>
-                            <a href="dota.html">description</a>
-                        </ol>
-                    </th>
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\LOL.jpg"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>LOL</h4>
-                            <h5>IDR 70.000 per Rank</h5>
-                            <a href="lol.html">description</a>
-                        </ol>
-                    </th>
-                    <th>
-                        <ol>
-                            <center>
-                                <h2></h2>
-                                <img src="home\image\CA BATTLEFIELD 2042.jpg"   width="300" height="150" border-radius = 50%>
-                            </center>
-                            <h4>CA : BATTLEFIELD 2042</h4>
-                            <h5>IDR 100.000 per Rank</h5>
-                            <a href="cbattle.html">description</a>
-                        </ol>
-                    </th>        
                 </tr>
 
             </table>

@@ -63,9 +63,16 @@
         </div>
 
         <div class="div_design">
+            <label>Rank</label>
+            <input type="text" name="naik_rank" placeholder="Masukkan rank" required=""> </input>
+        </div>
+
+        <div class="div_design">
             <label>Gambar</label>
             <input type="file" name="gambar" placeholder="Masukkan gambar" required=""> </input>
         </div>
+
+
 
         <div>
     

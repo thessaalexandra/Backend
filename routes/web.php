@@ -53,3 +53,7 @@ route::get('/hapus_games/{id}',[AdminController::class, 'hapus_games']);
 route::get('/edit_games/{id}',[AdminController::class, 'edit_games']);
 
 route::post('/edit_games_confirm/{id}',[AdminController::class, 'edit_games_confirm']);
+
+route::get('/detail_games/{id}',[HomeController::class, 'detail_games']);
+
+route::post('/tambah_pesanan/{id}',[HomeController::class, 'tambah_pesanan']);

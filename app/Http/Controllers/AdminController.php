@@ -21,7 +21,7 @@ class AdminController extends Controller
 
         $imagename=time().'.'.$gambar->getClientOriginalExtension();
         $game->save();
-        $request->gambar->move('game', 'imagename');
+        $request->gambar->move('game', $imagename);
 
         $game->gambar=$imagename;
         $game->save();
@@ -49,6 +49,7 @@ class AdminController extends Controller
         $game->nama_game=$request->nama_game;
         $game->deskripsi=$request->deskripsi;
         $game->harga=$request->harga;
+        $game->naik_rank=$request->naik_rank;
 
         $gambar=$request->gambar;
         if($gambar){
